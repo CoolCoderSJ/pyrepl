@@ -5,9 +5,9 @@ This code is licensed under the GNU GPL v 3.0.
 Code edited by CoolCoderSJ
 '''
 try:
-	from api_pb2 import *
+	from snow_pyrepl.api_pb2 import *
 except:
-	import api_pb2
+	from import snow_pyrepl.api_pb2 import api_pb2
 import requests
 import websocket
 import random
