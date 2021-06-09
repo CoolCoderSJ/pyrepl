@@ -1,0 +1,5 @@
+protobuf
+google-nucleus
+base36
+websocket_client
+requests
