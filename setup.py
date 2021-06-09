@@ -8,7 +8,7 @@ setup(
   author = 'SnowCoder',                   # Type in your name
   author_email = 'not@available.pleasedontemailme',      # Type in your E-Mail
   url = 'https://github.com/CoolCoderSJ/pyrepl',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/CoolCoderSJ/pyrepl/archive/refs/tags/v0.4.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/CoolCoderSJ/pyrepl/archive/refs/tags/v0.5.tar.gz',    # I explain this later on
   keywords = ['pyrepl', 'Python', 'Replit'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
 		  'protobuf',
