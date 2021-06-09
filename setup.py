@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'snow_pyrepl',         # How you named your package folder (MyLib)
   packages = ['snow_pyrepl'],   # Chose the same as "name"
-  version = '0.2',      # Start with a small number and increase it with every change you make
+  version = '0.3',      # Start with a small number and increase it with every change you make
   license='GNU GPL v 3.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Interact with Replit\'s API',   # Give a short description about your library
   author = 'SnowCoder',                   # Type in your name
