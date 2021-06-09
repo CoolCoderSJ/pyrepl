@@ -7,7 +7,7 @@ Code edited by CoolCoderSJ
 try:
 	from snow_pyrepl.api_pb2 import *
 except:
-	from import snow_pyrepl.api_pb2 import api_pb2
+	from snow_pyrepl import api_pb2
 import requests
 import websocket
 import random
