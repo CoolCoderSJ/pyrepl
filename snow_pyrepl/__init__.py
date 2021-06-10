@@ -108,7 +108,7 @@ class _Channel():
 		Returns a string of all output generate by sending a given message.
 		'''
 		got = self._send(data)
-		return ''.join([res.output for res in got]) # Combine the outputs
+		return [res for res in got]
 	def get_json(self, data):
 		'''
 		get_json(data: dict)
