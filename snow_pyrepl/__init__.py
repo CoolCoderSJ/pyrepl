@@ -149,6 +149,7 @@ class Client():
 			res = api_pb2.OpenChannelRes() # Wait to get an OpenChannelRes
 			data = self.ws.recv()
 			res.ParseFromString(data)
+			print(res)
 			got = bool(res.id) # If we got one, then exit
 		self.channels.append(res.id)
 		return _Channel(res.id, service, name, self.ws) # Create the channel
