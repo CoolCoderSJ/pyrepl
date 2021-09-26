@@ -22,7 +22,7 @@ def get_json(user, repl):
 	'''
 	return requests.get(f'https://replit.com/data/repls/@{user}/{repl}').json()
 
-def get_token(id, key):
+def get_token(name, repl, key):
 	'''
 	get_token(id: str, key: str)
 	Given a repl ID and an API key, get a one-time token for that repl.
@@ -37,16 +37,9 @@ def get_token(id, key):
 	cookies = {
 		'connect.sid': key
 	}
-	r = requests.post(f'https://replit.com/data/repls/{id}/get_connection_metadata', headers=headers, cookies=cookies)
-	return r.json()['token'], f"{r.json()['gurl']}/wsv2/{r.json()['token']}"
-
-def get_url(token, host, port, secure=False):
-	'''
-	get_url(token: str, host: str, port: str, [secure]: bool)
-	Gets the websocket connection URL for a given token, host, and port.
-	Normally the host will be eval.replit.com and the port will be 80.
-	'''
-	return f'ws{"s" if secure else ""}://{host}:{port}/wsv2/{token}'
+	r = requests.get(f'https://replit.com/@{name}/{repl}', headers=headers, cookies=cookies)
+	data = json.loads(r.text.split("<script id=\"__NEXT_DATA__\" type=\"application/json\">")[1].split("</script>")[0])['props']['pageProps']['connectionMetadata']
+	return data['token'], f"{data['gurl']}/wsv2/{data['token']}"
 
 class PyReplError(Exception):
 	'''
